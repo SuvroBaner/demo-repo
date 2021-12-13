@@ -1,0 +1,94 @@
+Adding SSH Keys -
+https://docs.github.com/en/authentication/connecting-to-github-with-ssh/about-ssh
+
+To see all the files including hidden : ls -la 
+
+git status
+git add .
+git commit -m "adding hello world"
+git push origin main
+
+
+
+Make a local repository a Git -
+git init
+<after commit and befor pushing create a repo on Github, then fire the below command>
+git remote add origin git@github.com:SuvroBaner/demo-repo-2.git
+git remote -v
+git push -u origin master
+
+Git Branching -
+
+Master/Main Branch
+Feature Branch
+Hot Fix Branch
+
+git branch
+git checkout -b feature-nameoftheusecase     (to create a new branch)
+git checkout main
+
+Difference before merging -
+
+git diff feature-nameoftheusecase
+git status
+git push --set-upstream origin feature-readme-instructions    ..(set-upstream is same as -u)
+
+
+What is a pull request or a PR ?
+A request to have your code pulled into another branch. Anyone can review our code, comment on it and ask us to make changes or updates
+Here, we have made a PR from a feature branch to a master branch
+Once the PR is merged, you will generally delete your feature or source branch and switch back to the master/main branch
+Then if you need to make additional coding changes, you will create another new branch and start the process over.
+
+SO, now go Github and do "Compare & Pull Request" .. add comments and then "Merge".
+
+After that, you can come back to the local env, go to the "main" branch and then do a git pull to get the latest from the Github
+
+git pull origin main 
+(or)
+git pull
+
+Now you don't reuse branches which you have already merged into the main.
+So, I am going to delete this branch
+
+git branch -d feature-readme-instructions 
+
+## Merge Conflicts -
+
+git commit -am "sdsdsd"  -- -only works for modified file
+
+git merge main
+
+Then merge it in the VS code itself.
+
+git status
+git commit -am "merged in main"
+
+### Undoing in Git -
+
+So, we make any changes in the code and then added .. Now we want to change it (from the staged file)
+git reset
+
+Now, whatif I want to undo a commit-
+git reset HEAD~1   ..(you are asking Git to point its header to the previous commit)
+
+To see the log of all your commits -
+git log
+
+to undone several commmits -
+
+git reset -hard <hash from that commit which you get in the log>
+
+#### Fork -
+You can fork other repositories and can then have access to them. And then raise a PR to add your changes over there.
+Or I can branch off the code from this repo and do whatever I want with it.
+
+
+=====
+
+feature branches get merged to dev 
+delete the feature
+all changes from dev get into master
+and we keep the dev as it is
+
+CRUD - create, read, update and delete operations
